@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DES 157 Experiment 1</title>
+</head>
+<body>
+    <h1>Experiment 1</h1>
+    <h2>Please open the console to see the functionality of the code</h2>
+
+    <script>
+        ////This programs prompts the user to input a number greater than 20 and then loops through all the numbers. But on numbers divisible by 3, it prints "Ka" and on numbers divisible by 5 it prints "Chow" and if its' divisible by both, it prints "Kachow"
+
+        var userNumber = prompt("Please put a number greater than 20", "");
+
+        if (userNumber > 19) {
+            for (var i = 0; i <= userNumber; i++) {
+                if (i % 3 == 0 && i % 5 == 0) {
+                    console.log("Kachow");
+                } else if (i % 3 == 0) {
+                    console.log("Ka");
+                } else if (i % 5 == 0) {
+                    console.log("Chow");
+                } else {
+                    console.log(i);
+                }
+            }
+        }
+        else {
+            console.log(`Hey! ${userNumber} ain't greater than 19 >:(`);
+        }
+    </script>
+</body>
+</html>
