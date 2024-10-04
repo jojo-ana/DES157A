@@ -1,0 +1,21 @@
+.trainContainer {
+    /* position: relative; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.trainForeground {
+    position: absolute;
+    z-index: 1;
+}
+
+.content {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
