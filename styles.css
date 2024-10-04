@@ -1,5 +1,43 @@
+/* Font Styling */
+h1 {
+    font-family: 'DM Mono';
+    font-style: italic;
+    font-size: 37px;
+    color: #090D12;
+}
+
+h2 {
+    font-family: 'DM Mono';
+    font-size: 28px;
+    color: #090D12;
+    width: 550px;
+}
+
+h3 {
+    font-family: 'DM Mono';
+    font-style: normal;
+    font-size: 28px;
+    color: #FFFFFF;
+    margin: 0;
+}
+
+p {
+    font-family: 'Poppins';
+}
+
+a {
+    font-family: 'Poppins';
+    font-size: 19px;
+    color: #EEE1D7;
+    text-decoration: none;
+}
+
+/* General Page Layout */
+body {
+    background-color: #9a95b1;
+}
+
 .trainContainer {
-    /* position: relative; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,13 +47,64 @@
 .trainForeground {
     position: absolute;
     z-index: 1;
+    user-select: none;
+    pointer-events: none;
 }
 
 .content {
     position: absolute;
-    top: 0%;
-    left: 0%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+/* Banner/Header Styling */
+.banner {
     display: flex;
-    justify-content: center;
     align-items: center;
+    gap: 23px;
+    text-align: end;
+    max-width: 630px;
+}
+
+/* Main Styling */
+main {
+    display: flex;
+    gap: 10px;
+    margin-block-start: 2em;
+    padding-bottom: 188px;
+}
+
+section {
+    background-color: #355f95c9;
+    min-width: 200px;
+    min-height: 300px;
+    padding: 2%;
+    border-radius: 15px;
+}
+
+section ul {
+    padding-left: 10px;
+}
+
+section ul li {
+    list-style-type: none;
+    line-height: 1.8em;
+}
+
+section ul li a:hover {
+    background-color: #D48969;
+    color: #090D12;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #6A7084;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    bottom: 0;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
 }
