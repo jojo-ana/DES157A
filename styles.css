@@ -47,7 +47,7 @@ body {
     background-repeat: repeat-x;
     background-position: 0px 194px;
     background-size: 1200px 285px;
-    animation: moveBackground 60s linear infinite;
+    animation: moveBackground 60s ease-in infinite;
     pointer-events: none;
 }
 
@@ -117,15 +117,21 @@ body {
 
 @keyframes swing {
     0% {
-        transform: rotate(30deg);
+      transform: rotate(0deg); /* Start at 0deg */
+    }
+    25% {
+      transform: rotate(30deg); /* Swing to -30deg */
     }
     50% {
-        transform: rotate(-30deg);
+      transform: rotate(-15deg); /* Swing to 30deg */
+    }
+    75% {
+      transform: rotate(15deg); /* Reduced swing back to -15deg */
     }
     100% {
-        transform: rotate(30deg);
+      transform: rotate(0deg); /* Smoothly come back to 0deg */
     }
-}
+  }
 
 
 /* Banner/Header Styling */
@@ -181,14 +187,49 @@ footer {
 /* hoverBox animation */
 .hoverBox {
     position: absolute;
-    width: 42%;
+    width: 21%;
     height: 500px;
-    background-color: #090D12;
-    margin-left: -41%;
+    /* background-color: #090D12; */
+    margin-top: 16%;
     cursor: pointer;
     z-index: 10;
 }
 
-.hoverBox:hover{
+/* .hoverBox:hover{
     background-color: #D48969;
+} */
+
+.hoverBox:hover ~ .trainContainer .handles {
+    animation: handlesStop 5s ease-in-out forwards;
+}
+
+@keyframes handlesStop {
+    0% {
+        transform: rotate(0deg); 
+      }
+      25% {
+        transform: rotate(30deg);
+      }
+      50% {
+        transform: rotate(-15deg);
+      }
+      75% {
+        transform: rotate(15deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+}
+
+.hoverBox:hover ~ .trainContainer {
+    animation: backgroundStop 6s ease-out forwards;
+}
+
+@keyframes backgroundStop {
+    from {
+        background-position: 0 194px;
+      }
+    to {
+        background-position: -1200px 194px;
+      }
 }
