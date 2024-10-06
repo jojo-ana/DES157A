@@ -35,6 +35,7 @@ a {
 /* General Page Layout */
 body {
     background-color: #9a95b1;
+    overflow: hidden;
 }
 
 .trainContainer {
@@ -42,6 +43,21 @@ body {
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    background-image: url("images/backgroundSky.jpg");
+    background-repeat: repeat-x;
+    background-position: 0px 194px;
+    background-size: 1200px 285px;
+    animation: moveBackground 60s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0 194px;
+      }
+      100% {
+        background-position: -50000px 194px;
+      }
 }
 
 .trainForeground {
@@ -58,6 +74,59 @@ body {
     transform: translate(-50%, -50%);
     z-index: 2;
 }
+
+.leftSide {
+    position: fixed;
+    top: -7%;
+    left: -52%;
+    width: 29%;
+    height: 100%;
+    background-color: #2d2740;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+}
+
+.rightSide {
+    position: fixed;
+    top: -7%;
+    right: -52%;
+    width: 29%;
+    height: 100%;
+    background-color: #2d2740;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 0;
+}
+
+/* animations  */
+.handles {
+    transform-origin: 500px 215px;
+    animation: swing 2s ease-in-out infinite; 
+}
+
+.handles2 {
+    margin-left: 550px;
+}
+
+.handles3 {
+    margin-left: 1050px;
+}
+
+@keyframes swing {
+    0% {
+        transform: rotate(30deg);
+    }
+    50% {
+        transform: rotate(-30deg);
+    }
+    100% {
+        transform: rotate(30deg);
+    }
+}
+
 
 /* Banner/Header Styling */
 .banner {
@@ -107,4 +176,19 @@ footer {
     bottom: 0;
     width: 100vw;
     margin-left: calc(-50vw + 50%);
+}
+
+/* hoverBox animation */
+.hoverBox {
+    position: absolute;
+    width: 42%;
+    height: 500px;
+    background-color: #090D12;
+    margin-left: -41%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.hoverBox:hover{
+    background-color: #D48969;
 }
