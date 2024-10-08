@@ -144,6 +144,19 @@ body {
     max-height: 250px;
 }
 
+.banner h1 {
+    background-color: #fff7f0f5;
+    padding: 1%;
+    border-radius: 15px;
+}
+
+.banner h2 {
+    background-color: #7f889aed;
+    padding: 1%;
+    border-radius: 15px;
+
+}
+
 /* Main Styling */
 main {
     display: flex;
