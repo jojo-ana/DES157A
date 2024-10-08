@@ -47,7 +47,7 @@ body {
     background-repeat: repeat-x;
     background-position: 0px 194px;
     background-size: 1200px 285px;
-    animation: moveBackground 60s ease-in infinite;
+    animation: moveBackground 60s linear infinite;
     pointer-events: none;
 }
 
@@ -237,7 +237,7 @@ footer {
 }
 
 .hoverBox:hover ~ .trainContainer {
-    animation: backgroundStop 6s ease-out forwards;
+    animation: backgroundStop 2s ease-out forwards;
 }
 
 @keyframes backgroundStop {
