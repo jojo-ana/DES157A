@@ -138,11 +138,10 @@ body {
 /* Banner/Header Styling */
 .banner {
     display: flex;
-    align-items: center;
     gap: 23px;
     text-align: end;
-    max-width: 630px;
     max-height: 250px;
+    align-items: center;
 }
 
 .banner h1 {
@@ -155,7 +154,7 @@ body {
     background-color: #7f889aed;
     padding: 1%;
     border-radius: 15px;
-
+    max-width: 379px;
 }
 
 /* Main Styling */
@@ -164,6 +163,7 @@ main {
     gap: 10px;
     margin-block-start: 2em;
     padding-bottom: 188px;
+    justify-content: center;
 }
 
 section {
