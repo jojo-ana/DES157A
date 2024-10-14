@@ -1,7 +1,8 @@
 /* general styling */
 body {
     background-color: #0e1a13;
-    padding: 2%;
+    padding: 0 12%;
+    overflow-x: hidden; 
 }
 
 h1, h2, h3 {
@@ -17,6 +18,28 @@ h2, p {
 a {
     color: #fff5ae;
 }
+
+.backgroundDecor img {
+    position: absolute;
+    border: 3px solid #e0dada;
+    background-color: #e0dada;
+    padding: 1%;
+    z-index: -3;
+}
+
+.backgroundDecor img:first-of-type {
+    transform: rotateZ(-16deg);
+    right: 91%;
+    top: 27%;
+}
+
+.backgroundDecor img:nth-of-type(2) {
+    transform: rotateZ(143deg);
+    right: -13%;
+    top: -18%;
+}
+
+
 
 /* header stylling */
 header {
@@ -55,20 +78,47 @@ article div {
 article h3 {
     letter-spacing: 11px;
     background-color: #1a1a15;
-    padding: 1%;
     text-align: center;
-    border: 1.5px solid #484848;
-    font-size: 1.3em;
+    font-size: 1.7em;
 }
 
 article p {
     line-height: 1.75em;
-    max-width: 47ch;
+    max-width: 98ch;
     text-indent: 2em;
     margin: 0 auto;
+    background: #0e1a13;
+    padding: 0 1%;
 }
 
 article a:hover {
     background-color: #fff5ae;
     color:#1a1a15;
+}
+
+article .letterContainer {
+    display: flex;
+    gap: 5px;
+}
+
+article .letterBox {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    border: 1.5px solid #484848;
+    font-family: 'Franklin Gothic Std', Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    justify-content: flex-end;
+    align-items: center;
+    transition: transform 0.5s ease-in-out;
+}
+
+article .letterBox:hover {
+    transform: rotateX(360deg);
+}
+
+article p {
+    column-count: 2; /* Number of columns */
+      column-gap: 20px; /* Space between columns */
 }
