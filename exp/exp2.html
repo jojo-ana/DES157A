@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DES 157 Experiment 2</title>
+
+     <!-- normalize link -->
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+     <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            text-align: center;
+            padding: 50px;
+        }
+        h1, h2, p {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        button:hover {
+            background-color: #4f9cf0;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+
+        .wrong {
+            color: red;
+        }
+
+        .right {
+            color: green;
+        }
+     </style>
+</head>
+
+<body>
+    <h1>Experiment 2</h1>
+
+    <div class="container">
+        <h2>Guessing Game</h2>
+        <p>Credit: Krithika Govind</p>
+        <p>Guess the color the computer is thinking of (red, yellow, green, or blue):</p>
+        <button onclick="checkColor()">Press to Guess</button>
+        <p id="result"></p>
+        <p id="compGuess"></p>
+    </div>
+
+    <script>
+        /* This program is a color guessing game where the user attempts to guess the color the computer randomly selected from a set list. The program uses a prompt to collect the user's guess and displays whether they were correct or not. It utilizes functions, sequences, and DOM to affect the page after its initial load as a result of the game itself.
+        */
+
+        function getRandomColor() {
+            var colors = ["red", "yellow", "green", "blue"];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function checkColor() {
+            //Prompting for the user's guess            
+            var userGuess = prompt("Enter your guess (red, yellow, green, or blue):", "").toLowerCase();
+
+            //using another function to generate a random color 
+            var randomColor = getRandomColor();
+
+            //Displaying the computer's guess
+            var resultDisplay = document.getElementById("result");
+            var computerGuessDisplay = document.getElementById('compGuess');
+            computerGuessDisplay.innerHTML = `The computer guessed ${randomColor.toUpperCase()}`;
+
+            //Using conditional to check if its the same color
+            if (userGuess === randomColor) {
+                resultDisplay.classList.remove('wrong');
+                resultDisplay.innerHTML  = "You are right!";
+                resultDisplay.classList.add('right');
+
+            } else {
+                resultDisplay.classList.remove('right');
+                resultDisplay.innerHTML = "Try again!";
+                resultDisplay.classList.add('wrong');
+            }
+
+
+        }
+
+    </script>
+</body>
+</html>
