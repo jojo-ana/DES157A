@@ -71,7 +71,7 @@
             var computerGuessDisplay = document.getElementById('compGuess');
             computerGuessDisplay.innerHTML = `The computer guessed ${randomColor.toUpperCase()}`;
 
-            //Using conditional to check if its the same color
+            //Using conditional to check if its the same color and then display
             if (userGuess === randomColor) {
                 resultDisplay.classList.remove('wrong');
                 resultDisplay.innerHTML  = "You are right!";
