@@ -45,7 +45,7 @@
         <h2>Guessing Game</h2>
         <p>Credit: Krithika Govind</p>
         <p>Guess the color the computer is thinking of (red, yellow, green, or blue):</p>
-        <button onclick="checkColor()">Press to Guess</button>
+        <button>Press to Guess</button>
         <p id="result"></p>
         <p id="compGuess"></p>
     </div>
@@ -53,13 +53,14 @@
     <script>
         /* This program is a color guessing game where the user attempts to guess the color the computer randomly selected from a set list. The program uses a prompt to collect the user's guess and displays whether they were correct or not. It utilizes functions, sequences, and DOM to affect the page after its initial load as a result of the game itself.
         */
+        var btn = document.querySelector('button');
 
         function getRandomColor() {
             var colors = ["red", "yellow", "green", "blue"];
             return colors[Math.floor(Math.random() * colors.length)];
         }
 
-        function checkColor() {
+        btn.addEventListener('click', function(){
             //Prompting for the user's guess            
             var userGuess = prompt("Enter your guess (red, yellow, green, or blue):", "").toLowerCase();
 
@@ -82,10 +83,7 @@
                 resultDisplay.innerHTML = "Try again!";
                 resultDisplay.classList.add('wrong');
             }
-
-
-        }
-
+        })
     </script>
 </body>
 </html>
