@@ -39,6 +39,10 @@ a {
     top: -18%;
 }
 
+main {
+    display: flex;
+    flex-direction: column-reverse;
+}
 
 
 /* header stylling */
