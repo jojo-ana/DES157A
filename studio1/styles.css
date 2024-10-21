@@ -1,0 +1,257 @@
+/* Base Styling */
+body {
+    background: linear-gradient(to right, #45524b, #5b6c6d);
+    background-size: 200% 200%;
+    overflow-x: hidden;
+    animation: gradientAnimation 20s ease infinite;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+#backgroundElements {
+    background-image: url("images/laundryBase.png");
+    background-repeat: no-repeat;
+    background-position: 50% -4%;
+    position: relative;
+    width: 1200px;  /* Adjust to your desired width */
+    height: 750px; /* Adjust to your desired height */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    overflow: hidden;
+}
+
+.imgStill, .moving {
+    position: absolute;
+}
+
+/* Animations for background */
+
+#clothesSpin {
+    transform-origin: 125px 620px;
+    animation: rotateAround 1s linear infinite;
+}
+
+@keyframes rotateAround {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+#washingMachine {
+    animation: rumble 1s ease infinite; /* Adjust duration as needed */
+}
+
+@keyframes rumble {
+    0% {
+        transform: translate(0, 0);
+    }
+    10% {
+        transform: translate(0, -3px);
+    }
+    20% {
+        transform: translate(0, 3px);
+    }
+    30% {
+        transform: translate(0, -3px);
+    }
+    40% {
+        transform: translate(0, 3px);
+    }
+    50% {
+        transform: translate(0, 0); 
+    }
+    100% {
+        transform: translate(0, 0); 
+    }
+
+}
+
+.swaying {
+    animation: swaySideToSide 3s ease-in-out infinite;
+}
+
+@keyframes swaySideToSide {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  75% {
+    transform: translateX(1px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Mad Libs Content  */
+main {
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#overlay {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    /* position: absolute;
+    background-color: ;
+    top: 132px;
+    left: 0;
+    width: 32vw;
+    height: 100vh;
+    transition-property: opacity, visibility;
+    transition-duration: 1s;
+    transition-timing-function: ease;
+    padding: 10%;
+    border-radius: 10px; */
+}
+
+#overlay article {
+    box-sizing: border-box;
+    background-color: rgb(231 227 164 / 88%);
+    padding: 20px;
+    width: 32vw;
+    height: 80vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 2%;
+    border-radius: 10px;
+}
+
+.showing {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+#story {
+    background-color: #e0f3dbeb;
+    width: 520px;
+    padding: 6%;
+    border-radius: 15px;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Caveat", cursive;
+    font-size: 65px;
+    color: #e0f3db;
+}
+
+h2 {
+    font-family: "Caveat", cursive;
+    color: #1a1d19;
+    font-size: 1.7em;
+    margin: 0px;
+}
+
+p, label {
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1.15em;
+    line-height: 2em;
+    color: #1a1d19;
+
+}
+
+input, span {
+    font-family: "Maven Pro", sans-serif;
+    font-weight: 700;
+    color: #24995a;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid #000;
+    width: 145px;
+    margin: 0 5px;
+}
+
+input::placeholder {
+    color: #999;
+    opacity: 1; 
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form div {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Button Styling */
+
+button {
+    display: block;
+    width: 39%;
+    padding: 10px;
+    background-color: rgb(72, 131, 123);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 15px 0;
+    position: relative;
+    font-family: "Maven Pro", sans-serif;
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+button#formCloseButton {
+    background-color: rgb(173, 88, 88);
+}
+
+button::after {
+    content: '';
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 0;
+    background: rgb(243, 234, 103);
+    transition: width 0.3s;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button:hover::after {
+    width: 100%;
+}

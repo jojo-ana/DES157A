@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mad Labs 2.0</title>
+
+    <!-- normalize link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <!-- stylesheet -->
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@583&family=Maven+Pro:wght@400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <div id="backgroundElements">
+        <img src="images/clothesLineBase.png" alt="base for the clothes line" class="imgStill">
+        <img src="images/washingBase1.png" alt="washing machine"
+        class="moving" id="washingMachine">
+        <img src="images/washingFull.png" alt="base for the clothes line"
+        class="imgStill">
+        <img src="images/hatFront.png" alt="hat illustration" class="moving swaying" >
+        <img src="images/pantsFront.png" alt="shorts illustration" class="moving swaying">
+        <img src="images/towelFront.png" alt="towel illustration" class="moving swaying">
+        <img src="images/washingSpin1.png" alt="clothes spinning illustration" class="moving" id="clothesSpin">
+        <img src="images/washingTop1.png" alt="base for the clothes line"
+        class="imgStill">
+    </div>
+
+    <main>
+        <header><h1>Washing Machine Mad Libs</h1></header>
+
+        <button id="openForm" class="showing">Fill in the Mad Libs!</button>
+
+        <section id="overlay" class="showing">
+            <article>
+                <h2>Fill in the blanks:</h2>
+                <form id="madLibsForm">
+                    <label for="adjective">Adjective:</label>
+                    <input type="text" id="adjective" placeholder="e.g., silly" required>
+
+                    <label for="activity">Activity:</label>
+                    <input type="text" id="activity" placeholder="e.g., dancing" required>
+
+                    <label for="verb-ing">Verb ending in -ing:</label>
+                    <input type="text" id="verb-ing" placeholder="e.g., spinning" required>
+
+                    <label for="plural-noun">Plural noun:</label>
+                    <input type="text" id="plural-noun" placeholder="e.g., balloons" required>
+
+                    <label for="verb">Verb:</label>
+                    <input type="text" id="verb" placeholder="e.g., shout" required>
+
+                    <label for="smell">Type of smell:</label>
+                    <input type="text" id="smell" placeholder="e.g., vanilla" required>
+
+                    <label for="object">Object:</label>
+                    <input type="text" id="object" placeholder="e.g., spoon" required>
+
+                    <label for="verb2">Second Verb:</label>
+                    <input type="text" id="verb2" placeholder="e.g., hit" required>
+
+                    <label for="clothing">Article of clothing:</label>
+                    <input type="text" id="clothing" placeholder="e.g., shirt" required>
+
+                    <label for="pleasant-smell">Pleasant smell:</label>
+                    <input type="text" id="pleasant-smell" placeholder="e.g., fresh laundry" required>
+                    
+                    <div>
+                        <button type="submit">Submit</button>
+                        <button type="button" id="formCloseButton">Close Form</button>
+                    </div>
+                </form>
+            </article>
+        </section>
+        
+
+        <div id="story" class="showing">
+            <p>
+                It was a(n) <span id="story-adjective"></span> day, and I had just finished a(n) <span id="story-activity"></span> when suddenly, my washing machine started <span id="story-verb-ing"></span>! I couldn’t believe my eyes. I quickly ran over to the machine but it was too late. Clothes were flying out like <span id="story-plural-noun"></span>, and the machine was uncontrollable.
+            </p>
+            <p>
+                As I tried to stop it, I accidentally pressed a button on the machine and it started to <span id="story-verb"></span> loudly! Before I knew it, bubbles were everywhere and the room smelled like <span id="story-smell"></span>.
+            </p>
+            <p>
+                Desperate, I grabbed a <span id="story-object"></span> and started to <span id="story-verb2"></span> at the buttons, but nothing worked. Just when I thought the machine would work, it suddenly stopped, and out came my favorite <span id="story-clothing"></span>, perfectly clean and smelling like <span id="story-pleasant-smell"></span>. From that day on, I promised to never mix <em>that</em> and clothes together again.
+            </p>
+    
+        </div>
+        
+    </main>    
+</body>
+</html>
