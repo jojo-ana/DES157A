@@ -239,7 +239,7 @@ button#formCloseButton {
     background-color: rgb(173, 88, 88);
 }
 
-button::after, #submitBtn::after {
+button::after {
     content: '';
     display: block;
     position: absolute;
@@ -252,8 +252,13 @@ button::after, #submitBtn::after {
     transform: translateX(-50%);
 }
 
-button:hover::after, #submitBtn:hover::after {
+button#openForm:hover::after {
     width: 100%;
-    /* border-width: 5px;
-    border-color: #1a1d19; */
+}
+button#formCloseButton:hover {
+    background-color: rgb(220, 48, 48);
+}
+
+#submitBtn:hover {
+    background-color: #24995a;
 }
