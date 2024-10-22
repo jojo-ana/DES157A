@@ -218,7 +218,7 @@ form div {
 
 /* Button Styling */
 
-button {
+button, #submitBtn {
     display: block;
     width: 39%;
     padding: 10px;
@@ -239,7 +239,7 @@ button#formCloseButton {
     background-color: rgb(173, 88, 88);
 }
 
-button::after {
+button::after, #submitBtn::after {
     content: '';
     display: block;
     position: absolute;
@@ -252,6 +252,8 @@ button::after {
     transform: translateX(-50%);
 }
 
-button:hover::after {
+button:hover::after, #submitBtn:hover::after {
     width: 100%;
+    /* border-width: 5px;
+    border-color: #1a1d19; */
 }
