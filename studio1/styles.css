@@ -252,6 +252,11 @@ button::after {
     transform: translateX(-50%);
 }
 
+button:hover {
+    filter: drop-shadow(2px 2px  #000000);
+
+}
+
 button#openForm:hover::after {
     width: 100%;
 }
@@ -260,5 +265,7 @@ button#formCloseButton:hover {
 }
 
 #submitBtn:hover {
-    background-color: #24995a;
+    background-color: #1bb462;
+    filter: drop-shadow(2px 2px  #000000);
+
 }
