@@ -23,7 +23,7 @@
 
     // code for the madlib section
     const myForm = document.querySelector('#madLibsForm');
-    const inputIds = ['adjective', 'activity', 'verb-ing', 'plural-noun', 'verb', 'smell', 'object', 'verb2', 'clothing', 'pleasant-smell'];
+    const inputIds = ['adjective', 'activity', 'verb-ing', 'plural-noun', 'verb', 'smell', 'object', 'clothing', 'pleasant-smell'];
     const madLibFill = document.querySelectorAll('span');
 
     myForm.addEventListener('submit', function(event) {
