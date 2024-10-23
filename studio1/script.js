@@ -23,30 +23,43 @@
 
     // code for the madlib section
     const myForm = document.querySelector('#madLibsForm');
-    const submitBtn = document.querySelector('#submitBtn');
+    const inputIds = ['adjective', 'activity', 'verb-ing', 'plural-noun', 'verb', 'smell', 'object', 'verb2', 'clothing', 'pleasant-smell'];
     const madLibFill = document.querySelectorAll('span');
 
     myForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        alert("shits been submitting oooooo");
+        event.preventDefault(); 
+        let hasError = false; 
+        let errorMessage = document.querySelector('#errorMessage');
+        
+        errorMessage.innerHTML = '';
 
-        const inputWords = ['#adjective', '#activity', '#verb-ing', '#smell', '#object', '#verb2', '#clothing', '#pleasant-smell']
+        //loops through the inputs: making sure the text box is filled and updating spans (in order) 
+        for (let i = 0; i < madLibFill.length; i++) {
+            const inputId = inputIds[i];
+            const inputElement = document.querySelector(`#${inputId}`);
+            const inputValue = inputElement.value;
 
-        for (const neededWord of inputWords) {
-            const userInput = document.querySelector(neededWord);
-            console.log(`Value of ${neededWord}: ${userInput.value}`)
-
-            for (var i = 0; i < madLibFill.length; i++) {
-                madLibFill[i].innerHTML = `${userInput.value}`;
+            if (!inputValue) {
+                let myText = `<p>Please provide ${inputId.replace('-', ' ')}</p>`;
+                inputElement.focus();
+                errorMessage.innerHTML = myText; 
+                hasError = true;
+                break; //stops it at the curent loop count
+            } else {
+                madLibFill[i].innerHTML = inputValue;
+                // console.log(`reading: ${inputValue}`);
             }
         }
 
+        //if theres no errors in the loop, hides overlay, shows finished product, + clears input
+        if (!hasError) {
+            overlay.className = 'hidden';
+            finishedMadLib.className = 'showing';
 
-    });
-
-    submitBtn.addEventListener('click', function(){
-        overlay.className = 'hidden';
-        finishedMadLib.className = 'showing';
+            for (let i = 0; i < inputIds.length; i++) {
+                document.querySelector(`#${inputIds[i]}`).value = '';
+            }
+        }
     });
 
 
