@@ -23,8 +23,8 @@ body {
     background-repeat: no-repeat;
     background-position: 50% -4%;
     position: relative;
-    width: 1200px;  /* Adjust to your desired width */
-    height: 750px; /* Adjust to your desired height */
+    width: 1200px;
+    height: 750px; 
     top: 50%;
     left: 50%;
     transform: translate(-50%, 0%);
@@ -122,17 +122,6 @@ main {
     transition-property: opacity, visibility;
     transition-duration: 1s;
     transition-timing-function: ease;
-    /* position: absolute;
-    background-color: ;
-    top: 132px;
-    left: 0;
-    width: 32vw;
-    height: 100vh;
-    transition-property: opacity, visibility;
-    transition-duration: 1s;
-    transition-timing-function: ease;
-    padding: 10%;
-    border-radius: 10px; */
 }
 
 #overlay article {
