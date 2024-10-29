@@ -10,7 +10,7 @@ h1, h2, h3 {
     color: #afa450;
 }
 
-h2, p {
+h2, p, figcaption {
     font-family: "Arimo", sans-serif;
     color: aliceblue;
 }
@@ -124,5 +124,17 @@ article .letterBox:hover {
 
 article p {
     column-count: 2; /* Number of columns */
-      column-gap: 20px; /* Space between columns */
+    column-gap: 20px; /* Space between columns */
+}
+
+article figcaption {
+    text-align: center
+}
+
+article img {
+    width: 300px;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
