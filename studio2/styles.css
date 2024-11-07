@@ -1,0 +1,133 @@
+/****** Body and Overlay styling ******/
+body {
+    background-color: #110f16;
+}
+
+.overlay {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw; 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; 
+    z-index: 10; 
+}
+
+.overlay img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+/****** Font styling ******/
+
+p {
+    font-family: "Balthazar", serif;
+    font-size: 1em;
+}
+
+/****** Header styling ******/
+header {
+    padding: 130px 50px 0 50px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: repeating-linear-gradient(
+        90deg,
+        #a47551,
+        #a47551 10px,
+        #8a5e3a 10px,
+        #8a5e3a 20px
+    );    position: fixed;
+    z-index: 4;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header h1 {
+    background-color: burlywood;
+    font-family: "Ewert", serif;
+    font-size: 55px;
+    color: #7d3170;
+    padding: 0 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/****** Main styling ******/
+main {
+    padding: 0 22%;
+    position: relative;
+    z-index: -1;
+}
+
+/****** Main: Img styling ******/
+#imgContainer {
+    position: relative;
+    width: 300px;
+    height: 300px; 
+    z-index: 1;
+}
+
+.carousel {
+    position: absolute;
+    top: 280%;
+    left: 40%;
+    width: 100%;
+    height: 100%;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    animation: rotateCarousel 10s linear infinite;
+}
+
+/* Position each item around the center in a circle */
+.carousel-item {
+    position: absolute;
+    width: 300px;
+    height: auto; 
+    transform-origin: center center;
+}
+
+.selen1 { transform: rotate(0deg) translate(350px)  rotate(90deg); }
+.selen2 { transform: rotate(90deg) translate(350px) rotate(90deg); }
+.selen3 { transform: rotate(180deg) translate(350px) rotate(90deg); }
+.selen4 { transform: rotate(270deg) translate(350px) rotate(90deg); }
+
+@keyframes rotateCarousel {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+main #imgContainer img {
+    width: 300px;
+    height: auto;
+    
+}
+
+main #imgContainer img:hover {
+    cursor: pointer;
+}
+
+/* Spotlight overlay */
+.spotlight {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle 300px at var(--x, 50%) var(--y, 50%), transparent, rgba(0, 0, 0, 0.8));
+    pointer-events: none;
+    transition: background-size 0.3s ease;
+  }
+
+/****** Main: Text styling ******/
+
+
+/****** Footer styling ******/

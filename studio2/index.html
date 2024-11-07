@@ -6,7 +6,9 @@
     <title>Every Picture Project</title>
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Balthazar&family=Ewert&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+
     <script src="script.js" defer></script>
 </head>
 
@@ -21,26 +23,38 @@
     
     <main>
         <div id="imgContainer">
-            <section id="selen1" class="onscreen">
-                <img src="images/selen1old.png" alt="selen out in the world">
-                <p></p>
-            </section>
+            <div class="carousel">
+                <section class="selen1 carousel-item onscreen">
+                    <img src="images/selen1old.png" alt="selen out in the world">
+                </section>
 
-            <section id="selen2" class="offscreen">
-                <img src="images/selen2old.png" alt="selen out in the world">
-                <p></p>
-            </section>
+                <section class="selen2 carousel-item offscreen">
+                    <img src="images/selen2old.png" alt="selen out in the world">
+                </section>
 
-            <section id="selen3" class="offscreen">
-                <img src="images/selen3old.png" alt="selen out in the world">
-                <p></p>
-            </section>
+                <section class="selen3 carousel-item offscreen">
+                    <img src="images/selen3old.png" alt="selen out in the world">
+                </section>
 
-            <section id="selen4" class="offscreen">
-                <img src="images/selen4old.png" alt="selen out in the world">
-                <p></p>
-            </section>
+                <section class="selen4 carousel-item offscreen">
+                    <img src="images/selen4old.png" alt="selen out in the world">
+                </section>
+            </div>
+        </div>
+
+        <div id="textContainer">
+            <p class="selen1text onscreen">15 September 2024, Elkton</p>
+
+            <p class="selen2text offscreen">18 September 2024, Grayson Highlands State Park</p>
+
+            <p class="selen3text offscreen">18 September 2024, Grayson Highlands State Park</p>
+
+            <p class="selen4text offscreen">18 September 2024, Grayson Highlands State Park</p>
         </div>
     </main>
+
+    <footer>
+        <p>Credits: Photographed and edited by Joanah Martin</p>
+    </footer>
 </body>
 </html>
