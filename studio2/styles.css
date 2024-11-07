@@ -88,7 +88,7 @@ main {
     position: absolute;
     width: 300px;
     height: auto; 
-    transform-origin: center center;
+    transform-origin: 50% 50%;
 }
 
 .selen1 { transform: rotate(0deg) translate(350px)  rotate(90deg); }
