@@ -108,7 +108,7 @@ main {
 main #imgContainer img {
     width: 300px;
     height: auto;
-    
+    filter: blur(3px);
 }
 
 main #imgContainer img:hover {
