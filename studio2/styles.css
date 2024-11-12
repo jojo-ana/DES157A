@@ -67,20 +67,28 @@ main {
 /****** Main: Img styling ******/
 #imgContainer {
     position: relative;
-    width: 300px;
-    height: 300px; 
+    width: 500px;
+    height: 500px;
     z-index: 1;
+    transform: translate(-25%, 57%);
+    transform-origin: center;
+    overflow: hidden; /* turn back on later*/
 }
 
 .carousel {
     position: absolute;
-    top: 280%;
-    left: 40%;
-    width: 100%;
-    height: 100%;
-    transform: translate(-50%, -50%);
-    transform-origin: center;
-    animation: rotateCarousel 10s linear infinite;
+    top: 133%;
+    left: 60%;
+    /* width: 100%;
+    height: 100%; */
+    /* transform: translate(-44%, -50%); */
+    transform-origin: center center;
+    animation: rotateCarousel 10s linear infinite; /* turn back on later*/
+}
+
+.carousel img {
+    width: 500px;
+    height: auto;
 }
 
 /* Position each item around the center in a circle */
@@ -88,27 +96,39 @@ main {
     position: absolute;
     width: 300px;
     height: auto; 
-    transform-origin: 50% 50%;
+    /* transform-origin: 50% 50%; */
 }
 
-.selen1 { transform: rotate(0deg) translate(350px)  rotate(90deg); }
-.selen2 { transform: rotate(90deg) translate(350px) rotate(90deg); }
-.selen3 { transform: rotate(180deg) translate(350px) rotate(90deg); }
-.selen4 { transform: rotate(270deg) translate(350px) rotate(90deg); }
+.selen1 { 
+    transform: rotate(90deg);
+    translate: 80% -50%;
+}
+.selen2 { 
+    transform: rotate(180deg);
+    translate: -50% 45%;
+}
+.selen3 { 
+    transform: rotate(270deg);
+    translate: -180% -50%;
+}
+.selen4 { 
+    transform: rotate(0deg);
+    translate: -50% -150%;
+}
 
 @keyframes rotateCarousel {
     from {
-        transform: translate(-50%, -50%) rotate(0deg);
+        transform: rotate(0deg);
     }
     to {
-        transform: translate(-50%, -50%) rotate(360deg);
+        transform: rotate(360deg);
     }
 }
 
 main #imgContainer img {
     width: 300px;
     height: auto;
-    filter: blur(3px);
+    /* filter: blur(3px); */
 }
 
 main #imgContainer img:hover {
@@ -134,19 +154,41 @@ main #textContainer {
     top: 127%;
     z-index: 10;
 }
+
 main #textContainer p {
     color:aliceblue;
+    background-color: rgba(222, 184, 135, 0.456);
 }
 
 /****** Footer styling ******/
+footer {
+    background-color: burlywood;
+    transform: translate(0, 45vh);
+    padding: 10px 0;
+}
 
+footer p {
+    text-align: center;
+}
 
 /****** Classes ******/
 .onscreen {
     box-shadow: 0px 0px 5px 3px #0ff;
+    filter: none;
 }
 
 .offscreen {
     filter: blur(5px);
     z-index: -1;
 }
+
+
+#test {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    position: absolute;
+    z-index: 100;
+    cursor: pointer;
+}
+

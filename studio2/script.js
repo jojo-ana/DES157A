@@ -1,5 +1,7 @@
 (function(){
     "use strict";
+
+    /////// Spotlight hover effect
     document.addEventListener('mousemove', function(event){
         const spotlight = document.getElementById('spotlight');
         const x = event.clientX;
@@ -11,5 +13,7 @@
 
     });
 
+    let imgScrollCounter;
+    const testDiv = document.querySelector('#test');
 
 })();
