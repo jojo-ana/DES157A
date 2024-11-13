@@ -1,5 +1,6 @@
 (function(){
     "use strict";
+    console.log('reading js');
 
     /////// Spotlight hover effect
     document.addEventListener('mousemove', function(event){
@@ -42,24 +43,28 @@
 
                 ///interactivity based on rotation which is based on scroll; affects carousel item/caption visibility
                 if (i === 0 && rotation >= 0 && rotation < 90) {
+                    // console.log('you in section1');
                     imgElement.src = 'images/selen1old.png';
                     toggleCarouselItemVisibility(carouselItem, captionText, true, 0);
                     if (span) {
                         captionText.removeChild(span);
                     }
                 } else if (i === 1 && rotation >= 90 && rotation < 180) {
+                    // console.log('you in section2');
                     imgElement.src = 'images/selen2old.png';
                     toggleCarouselItemVisibility(carouselItem, captionText, true, 1);
                     if (span) {
                         captionText.removeChild(span); 
                     }                  
                 } else if (i === 2 && rotation >= 180 && rotation < 270) {
+                    // console.log('you in section3');
                     imgElement.src = 'images/selen3old.png';
                     toggleCarouselItemVisibility(carouselItem, captionText, true, 2);
                     if (span) {
                         captionText.removeChild(span); 
                     }
                 } else if (i === 3 && rotation >= 270 && rotation < 360) {
+                    // console.log('you in section4');
                     imgElement.src = 'images/selen4old.png';
                     toggleCarouselItemVisibility(carouselItem, captionText, true, 3);
                     if (span) {
@@ -76,6 +81,7 @@
 
                 ///inserting a span when img is hovered, as if it's always been there
                 imgElement.addEventListener('mouseover', function () {
+                    // console.log('HOVERING GRAH');
                     const span = captionText.querySelector('span');
                         if (!span) {
                             const newSpan = document.createElement('span');
@@ -85,6 +91,7 @@
                 });
 
                 imgElement.addEventListener('mouseout', function () {
+                    // console.log('GOING OFF');
                     const span = captionText.querySelector('span');
                     if (span) {
                         captionText.removeChild(span);

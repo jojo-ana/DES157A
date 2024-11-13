@@ -180,7 +180,7 @@ main #imgContainer img:hover {
 /****** Main: Text styling ******/
 main #textContainer {
     position: absolute;
-    right: 12%;
+    right: 17%;
     top: 127%;
     z-index: 10;
 }
