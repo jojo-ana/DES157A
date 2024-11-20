@@ -1,0 +1,21 @@
+body {
+    background-color: antiquewhite;
+}
+h1, p {
+    font-family: "Arimo", sans-serif;
+}
+
+h1 {
+    text-align: center;
+
+}
+
+p {
+    column-count: 2; /* Number of columns */
+    column-gap: 20px; /* Space between columns */
+    line-height: 1.75em;
+    max-width: 98ch;
+    text-indent: 2em;
+    margin: 0 auto;
+    padding: 0 1%;
+}
