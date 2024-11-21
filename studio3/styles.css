@@ -1,0 +1,88 @@
+/******* Regular styling *******/
+
+body {
+    background-image: url(images/background.png);
+}
+
+h1 {
+    font-family: "Bubblegum Sans", serif;
+    color: #00A904;
+}
+
+h2, p {
+    font-family: "Lilita One", serif; 
+}
+
+p.logo, button {
+    font-family: "Rubik Dirt", serif;
+    color: #56CF15;
+}
+
+button {
+    color: #1E270E;
+}
+
+/******* Main Page *******/
+header {
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+
+header #mainPage {
+    margin: auto;
+    position: relative;
+}
+
+header div.shape {
+    position: absolute;
+    z-index: -1;
+    height: 374px;
+    width: 830px;
+    border-radius: 50%;
+    background-color: #d1f5beb8;
+    top: 5%;
+    left: -15%;
+    transform-origin: 30vw 50vh;
+
+    animation: shakeCircle 3s ease infinite;
+}
+
+header h1 {
+    font-size: 195px;
+}
+
+header p {
+    position: absolute;
+    font-size: 177px;
+
+    top: -156px;
+    right: -90px;
+}
+
+header img {
+    position: absolute;
+    top: 174px;
+    left: 24px;
+}
+
+
+/******* classes *******/
+.showing {
+    visibility: visible;
+    opacity: 1;
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+}
+
+/******* animations *******/
+@keyframes shakeCircle {
+    0% {transform: rotate(0deg);}
+    25% {transform: rotate(-10deg);}
+    75% {transform: rotate(10deg);}
+    100% {transform: rotate(0deg);}
+
+}

@@ -4,8 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DES 157A GameOn! Project</title>
+
+    <!-- normalize link -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Lilita+One&family=Rubik+Dirt&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- JavaScript -->
+    <script src="script.js" defer></script>
 </head>
+
 <body>
+    <main>
+        <header>
+            <section id="mainPage" class="showing">
+                <div class="shape"></div>
+                <h1>PIKMAN</h1>
+                <p class="logo">+</p>
+                <img src="images/flower.png" alt="graphic of a flower">
+
+                <button id="instructionScreen">Play</button>
+            </section>
     
+
+        </header>
+
+        <section id="logo" class="hidden">
+            <img src="images/logoSmall.png" alt="logo saying PIKMAN">
+            <p class="logo">+</p>
+        </section>
+
+        <!-- module -->
+        <section id="instructions" class="hidden">
+            <h2>How to Play</h2>
+            <p>NOTICE: This is definitely a legally distinct version of a known IP. All the material in this game is unrelated to the Nintendo game.</p>
+            <p>This game is a 2-player competetive game-whoever earns the most amount of points win the game. There are 4 different types of points: </p>
+            <ul>
+                <li>+1 <img src="#" alt=""></li>
+                <li>-1 <img src="#" alt=""></li>
+                <li>+5 <img src="#" alt=""></li>
+                <li>+5 <img src="#" alt=""></li>
+            </ul>
+            <p>To earn points, the player must click on the images on the screen before the time runs out. And above all else, have fun!</p>
+
+            <button id="playGameP1">Player 1</button>
+            <button id="playGameP2">Player 2</button>
+        </section>
+
+        <section id="gameScreen" class="hidden">
+            <!-- add pause option later to this section -->
+            <div id="topHeader">
+                <p>Timer: <span id="timerCnt"></span></p>
+                <p id="playerDisplay"></p>
+            </div>
+
+            <div id="gameplaySection">
+                <!-- give this one a set value/centered on the screen, fun rects! -->
+            </div>
+
+            <div id="scoreDisplay">
+                <p>Score: <span id="scoreCnt"></span></p>
+                <p id="scoreAddMinus"></p>
+            </div>
+        </section>
+
+        <!-- module -->
+        <section id="winnerScreen" class="hidden">
+            <p>Winner!</p>
+            <span id="winnerPlayer"></span>
+            <p>Score: <span id="winnerScore"></span></p>
+            <button id="playAgain">Play Again?</button>
+        </section>
+    </main>
+
 </body>
 </html>
