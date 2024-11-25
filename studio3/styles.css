@@ -2,6 +2,8 @@
 
 body {
     background-image: url(images/background.png);
+    overflow: hidden;
+
 }
 
 h1 {
@@ -9,7 +11,7 @@ h1 {
     color: #00A904;
 }
 
-h2, p {
+h2, p, li {
     font-family: "Lilita One", serif; 
 }
 
@@ -18,21 +20,41 @@ p.logo, button {
     color: #56CF15;
 }
 
-button {
-    color: #1E270E;
-}
-
 /******* Main Page *******/
 header {
     display: grid;
     place-items: center;
-    height: 100vh;
+    /* height: 100vh; */
+    width: 100vw;
 }
 
 header #mainPage {
     margin: auto;
     position: relative;
+    top: 22%;
 }
+
+header section img#pikmanB, img#pikmanY, img#pikmanR {
+    z-index: -2;
+    left: 15%;
+    width: 280px;
+}
+
+header section #pikmanB {
+    animation: rotatePikminB 3s infinite;
+
+}
+
+header section #pikmanY {
+    animation: rotatePikminY 3s infinite;
+
+}
+
+header section #pikmanR {
+    animation: rotatePikminR 3s infinite;
+
+}
+
 
 header div.shape {
     position: absolute;
@@ -66,6 +88,270 @@ header img {
     left: 24px;
 }
 
+header section {
+    display: flex;
+    flex-direction: column;
+}
+
+header button {
+    background: linear-gradient(to bottom, #a7e8a3c2, #3d4f3996);
+    border: none;
+    color: #1E270E;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 80px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 51%);
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: 2px solid white;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    transform: scale(1.1);
+    pointer-events: none;
+}
+
+button:hover::before {
+    opacity: 1;
+    transform: scale(1);
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/******* Logo: Header *******/
+#logo {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 83px;
+    background-color: #d1f5be;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px;
+}
+
+#logo img {
+    height: 70px;
+    width: auto;
+}
+
+#logo .logo {
+    position: absolute;
+    font-size: 60px;
+    top: -84px;
+    left: 200px;
+}
+
+/******* Instructure Module *******/
+#instructions {
+    background-color: #d1f5be;
+    position: absolute;
+    width: 100vw;
+    top: 10%;
+}
+
+#instructions h2 {
+    font-size: 4em;
+    color: #1E270E;
+    text-align: center;
+    margin: 0;
+}
+
+#instructions ul {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+#instructions p, #instructions ul li {
+    padding: 0 7%;
+    color: #3d4f1e;
+    font-size: 1.2em;
+}
+
+#instructions div {
+    display: flex;
+    justify-content: center;
+    gap: 70px;
+}
+
+#instructions div button {
+    background: linear-gradient(to bottom, #a7e8a3c2, #3d4f3996);
+    border: none;
+    color: #1E270E;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 51%);
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#instructions .center {
+    text-align: center;
+}
+
+/******* GameScreen *******/
+#gameScreen #topHeader {
+    font-size: 4.5em;
+    position: absolute;
+    top: 5px;
+    left: 39vw;
+    color: #1E270E;
+    display: flex;
+    flex-direction: row;
+    gap: 100%
+}
+
+#gameScreen #topHeader p {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+    margin: 0;
+}
+
+#gameScreen #topHeader p#playerDisplay {
+    color:#00A904;
+}
+
+#gameScreen #gameplaySection {
+    background-image: url(images/grassBackground.png);
+    width: 1000px;
+    height: 540px;
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%); 
+}
+
+#gameScreen #gameplaySection::before, #gameScreen  #gameplaySection::after {
+    content: "";
+    position: absolute;
+    background-color: #A7E8A3;
+}
+
+#gameScreen #gameplaySection::before {
+    width: 105%;
+    height: 10px;
+    top: 12px;
+    left: -23px;
+}
+
+#gameScreen #gameplaySection::after {
+    width: 105%;
+    height: 10px; 
+    bottom: 12px; 
+    left: -23px;
+}
+
+#gameScreen #gameplaySection::before,
+#gameScreen #gameplaySection::after {
+    content: "";
+    position: absolute;
+    background-color: #A7E8A3;
+}
+
+#gameScreen #gameplaySection .left-line,
+#gameScreen #gameplaySection .right-line {
+    position: absolute;
+    width: 10px;
+    height: 110%; 
+    background-color: #A7E8A3; 
+    top: -26px;
+}
+
+#gameScreen #gameplaySection .left-line {
+    left: 16px; 
+}
+
+#gameScreen #gameplaySection .right-line {
+    right: 16px; 
+}
+
+
+#gameScreen #scoreDisplay {
+    font-size: 4.5em;
+    position: relative;
+    left: 39vw;
+    color: #1E270E;
+    top: -261px;
+}
+
+
+/******* Winner Screen Module *******/
+
+#winnerScreen {
+    background-color: #d1f5be;
+    position: absolute;
+    width: 100vw;
+    top: 10%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 47px;
+}
+
+#winnerScreen p {
+    margin: 0;
+    color: #3d4f1e;
+    font-size: 6.7em;
+    padding: 35px 0px;
+}
+
+span#winnerPlayer {
+    font-size: 6.7em;
+    color: #00A904;
+    font-family: "Lilita One", serif; 
+    padding: 59px 0px;
+
+}
+
+#winnerScreen h2 {
+    font-size: 4em;
+    color: #1E270E;
+    text-align: center;
+    margin: 0;
+    padding: 12px 0px;
+}
+
+
+#winnerScreen button {
+    background: linear-gradient(to bottom, #a7e8a3c2, #3d4f3996);
+    border: none;
+    color: #1E270E;
+    padding: 15px 30px;
+    text-align: center;
+    font-size: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgb(0 0 0 / 51%);
+    cursor: pointer;
+    outline: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
 
 /******* classes *******/
 .showing {
@@ -84,5 +370,74 @@ header img {
     25% {transform: rotate(-10deg);}
     75% {transform: rotate(10deg);}
     100% {transform: rotate(0deg);}
+    
+}
 
+/*** main page***/
+@keyframes rotatePikminB {
+    0% {
+        transform: translate(-161px, 190px) rotate3d(1, 1, 1, 0deg) scale(0.1);
+        opacity: 0;
+        filter: brightness(0.3) blur(14px);
+      }
+      25%{
+        filter: brightness(0.6) blur(4px);
+      }
+      70% {
+        
+        opacity: 1;
+        filter: brightness(1.0);
+      }
+      100% {
+        transform: translate(-161px, 190px) rotate3d(1, 1, 1, 360deg) rotateZ(31deg) scale(1.0);
+        opacity: 1;
+        filter: brightness(1.0);
+      }
+}
+
+@keyframes rotatePikminY {
+    0% {
+        transform: translate(259px, 370px) rotate3d(0, 1, 1, 0deg) scale(0.1);
+        opacity: 0;
+        filter: brightness(0.3) blur(14px);
+      }
+      25%{
+        filter: brightness(0.6) blur(4px);
+      }
+      70% {
+        transform: translate(259px, 370px) rotate3d(1, 0, 1, 360deg) scale(1.0);
+        opacity: 1;
+        filter: brightness(1.0);
+      }
+      100% {
+        transform: translate(2500px, 370px) rotate3d(1, 0, 1, 360deg) scale(1.0);
+        opacity: 1;
+        filter: brightness(1.0);
+      }
+}
+
+@keyframes rotatePikminR {
+    0% {
+        transform:translate(184px, -360px) rotate3d(1, 0, 1, 0deg) scale(0.1);
+        opacity: 0;
+        filter: brightness(0.3) blur(14px);;
+      }
+      25%{
+        filter: brightness(0.6) blur(4px);
+      }
+      70% {
+        
+        opacity: 1;
+        filter: brightness(1.0);
+      }
+      100%{
+        transform: translate(704px, -270px) rotate3d(0, 1, 1, 360deg)  rotateZ(-131deg) scale(1.0);
+        opacity: 1;
+        filter: brightness(1.0);
+      }
+}
+
+/*** instruction page***/
+@keyframes dropDown {
+    
 }
