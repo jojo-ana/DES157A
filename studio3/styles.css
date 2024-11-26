@@ -232,10 +232,14 @@ button:active {
     flex-direction: row;
     padding: 0;
     margin: 0;
+    width: 320px;
+
 }
 
 #gameScreen #topHeader p#playerDisplay {
     color:#00A904;
+    position: absolute;
+    right: -475px;
 }
 
 #gameScreen #gameplaySection {
@@ -312,15 +316,20 @@ button:active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 47px;
 }
 
 #winnerScreen p {
-    margin: 0;
     color: #3d4f1e;
-    font-size: 6.7em;
-    padding: 35px 0px;
+    font-size: 80px;
+    width: auto;
 }
+
+/* #winnerScreen span#winnerScore {
+    width: 100px;
+    height: 100px;
+    display: block;
+} */
+
 
 span#winnerPlayer {
     font-size: 6.7em;
@@ -363,6 +372,24 @@ span#winnerPlayer {
     visibility: hidden;
     display: none;
     opacity: 0;
+}
+
+.clickable {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.blocking-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    z-index: 9999; /* Make sure it appears on top of everything */
 }
 
 /******* animations *******/
