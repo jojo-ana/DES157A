@@ -50,10 +50,9 @@
             gameScreen.className = 'showing';
             playBackgroundMusic();
 
-
             currentPlayerIndex = parseInt(event.target.getAttribute('data-player'), 10);
             updatePlayerDisplay();
-            updateScores(); //Display current player's score
+            updateScores();
             console.log(`Player ${currentPlayerIndex + 1} selected!`);
             gameStarted = true;
         });
@@ -72,7 +71,7 @@
     }
 
     ////timer logic
-    let timer = 30; // 5 for demo; change to 30 for actual game
+    let timer = 30; //5 for demo; change to 30 for actual game
     let isSwitchingPlayer = false;
 
     function resetTimer() {
@@ -96,7 +95,7 @@
         setTimeout(() => {
             currentPlayerIndex = currentPlayerIndex === 0 ? 1 : 0; //Switch between Player 1 (0) and Player 2 (1)
             updatePlayerDisplay();
-            updateScores(); // Update score for the new player
+            updateScores(); //Update score for the new player
             console.log(`Switched to Player ${currentPlayerIndex + 1}`);
             resetTimer();
 
@@ -104,13 +103,13 @@
 
             ///checking if the round is complete
             if (gameData.currentRound >= gameData.rounds) {
-                determineWinner(); // Compare scores and go to the winning screen
+                determineWinner(); //Compare scores and go to the winning screen
             } else {
-                gameData.currentRound++; // Increment round
+                gameData.currentRound++; 
             }
 
             isSwitchingPlayer = false;
-        }, 5000); // Delay of 3 seconds before switching
+        }, 5000); 
     }
 
     const countdown = setInterval(() => {
@@ -121,35 +120,58 @@
         } else {
             switchPlayer();
         }
-    }, 1000); // Decrease timer every second
-
+    }, 1000);
     updateTimerDisplay();
 
     ////point clickables
     function createClickable() {
         if (!gameScreen.classList.contains('showing')) return;
 
-        const pointTypes = [1, -1, 5, -5];
+        const pointData = {
+            "1": ['leafB.png', 'leafY.png', 'leafR.png'],          
+            "-1": ['leafMinus.png'],                              
+            "5": ['flowerB.png', 'flowerR.png', 'flowerY.png'],   
+            "-5": ['flowerB.png', 'flowerR.png', 'flowerY.png']
+        };
+
+
+        const pointTypes = [1, 1, 1, -1, -1, 5, 5, 5, -5];
         const points = pointTypes[Math.floor(Math.random() * pointTypes.length)];
+        const imageOptions = pointData[points.toString()];
+        const selectedImage = imageOptions[Math.floor(Math.random() * imageOptions.length)];
+        console.log(selectedImage); 
         const clickable = document.createElement('div');
         clickable.classList.add('clickable');
-        clickable.style.width = '50px';
-        clickable.style.height = '50px';
-        clickable.style.position = 'absolute';
-        clickable.style.backgroundColor = points > 0 ? 'green' : 'red';
+        clickable.style.backgroundImage = `url('images/${selectedImage}')`;
         clickable.dataset.points = points;
 
         // Random position within gameplaySection
         const sectionWidth = gameplaySection.offsetWidth;
         const sectionHeight = gameplaySection.offsetHeight;
         const x = Math.random() * (sectionWidth - 50);
-        const y = Math.random() * (sectionHeight - 50);
+        const y = Math.random() * (sectionHeight - 150);
         clickable.style.left = `${x}px`;
         clickable.style.top = `${y}px`;
 
         clickable.addEventListener('click', () => {
-            gameData.score[currentPlayerIndex] += points; // Update the score for the current player
-            updateScores(); // Display updated score
+            if (points > 0) {
+                positiveClickSound.currentTime = 0;
+                positiveClickSound.volume = 0.45; 
+
+                positiveClickSound.play();
+            } else {
+                negativeClickSound.currentTime = 0;
+                negativeClickSound.volume = 0.15; 
+                negativeClickSound.play();
+            }
+
+            const pointsText = points > 0 ? `+${points}` : `${points}`;
+            scoreAddMinus.innerHTML = pointsText;
+            scoreAddMinus.classList.add('showing');
+            setTimeout(() => scoreAddMinus.classList.remove('showing'), 500);
+
+            gameData.score[currentPlayerIndex] += points; 
+            updateScores(); 
             gameplaySection.removeChild(clickable);
         });
 
@@ -198,9 +220,9 @@
 
     //////audio
     const backgroundMusic = new Audio('audio/grhOtonoke_mixdown.wav');
-    backgroundMusic.autoplay = true;  // Automatically play the music
-    backgroundMusic.loop = true;      // Loop the music indefinitely
-    backgroundMusic.volume = 0.15;  
+    backgroundMusic.autoplay = true;  
+    backgroundMusic.loop = true;    
+    backgroundMusic.volume = 0.075;  
 
     function playBackgroundMusic() {
         if (backgroundMusic.paused) {
@@ -208,5 +230,20 @@
             console.log("Background music playing");
         }
     }
+
+    const buttonClickSound = new Audio('audio/boink.wav');
+    const positiveClickSound = new Audio('audio/point.wav');
+    const negativeClickSound = new Audio('audio/pointMinus.wav');
+    const bttns = document.querySelectorAll('button');
+
+    bttns.forEach(button => {
+        button.addEventListener('click', () => {
+            buttonClickSound.volume = 0.25;
+            buttonClickSound.currentTime = 0;
+            buttonClickSound.play().catch(error => {
+                console.error('Sound playback error:', error);
+            });
+        });
+    });
 
 })();

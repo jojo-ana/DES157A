@@ -242,6 +242,12 @@ button:active {
     right: -475px;
 }
 
+#gameScreen #gameplaySection div.clickable {
+    width: 100px;
+    height: 129px;
+    position: absolute;
+}
+
 #gameScreen #gameplaySection {
     background-image: url(images/grassBackground.png);
     width: 1000px;
@@ -256,6 +262,7 @@ button:active {
     content: "";
     position: absolute;
     background-color: #A7E8A3;
+    box-shadow: -1px 0 6px rgba(0, 0, 0, 0.5);
 }
 
 #gameScreen #gameplaySection::before {
@@ -286,6 +293,7 @@ button:active {
     height: 110%; 
     background-color: #A7E8A3; 
     top: -26px;
+    box-shadow: -1px 0 6px rgba(0, 0, 0, 0.5);
 }
 
 #gameScreen #gameplaySection .left-line {
@@ -303,6 +311,23 @@ button:active {
     left: 39vw;
     color: #1E270E;
     top: 652px;
+}
+
+#scoreAddMinus {
+    position: absolute;
+    font-size: 34px;
+    animation: scoreAnimation 1s ease-out;
+    pointer-events: none;
+    z-index: 10;
+    top: -30px;
+    color: #00a904;
+    left: 300px;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+#scoreAddMinus.showing {
+    opacity: 1;
 }
 
 
@@ -323,13 +348,6 @@ button:active {
     font-size: 80px;
     width: auto;
 }
-
-/* #winnerScreen span#winnerScore {
-    width: 100px;
-    height: 100px;
-    display: block;
-} */
-
 
 span#winnerPlayer {
     font-size: 6.7em;
@@ -398,7 +416,11 @@ span#winnerPlayer {
     25% {transform: rotate(-10deg);}
     75% {transform: rotate(10deg);}
     100% {transform: rotate(0deg);}
-    
+}
+
+@keyframes scoreAnimation {
+    0% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
 }
 
 /*** main page***/
