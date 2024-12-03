@@ -220,12 +220,12 @@ button:active {
     font-size: 4.5em;
     position: absolute;
     top: 5px;
-    left: 39vw;
+    /* left: 39vw; */
     color: #1E270E;
     display: flex;
     flex-direction: row;
-    width: 21%;
-    gap: 100%;
+    width: 60%;
+    gap: 100px;
     justify-content: space-between;
 }
 
@@ -310,7 +310,7 @@ button:active {
 #gameScreen #scoreDisplay {
     font-size: 4.5em;
     position: relative;
-    left: 39vw;
+    left: 40%;
     color: #1E270E;
     top: 700px;
     width: 300px;
