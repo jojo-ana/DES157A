@@ -224,7 +224,9 @@ button:active {
     color: #1E270E;
     display: flex;
     flex-direction: row;
-    gap: 100%
+    width: 21%;
+    gap: 100%;
+    justify-content: space-between;
 }
 
 #gameScreen #topHeader p {
@@ -233,7 +235,6 @@ button:active {
     padding: 0;
     margin: 0;
     width: 320px;
-
 }
 
 #gameScreen #topHeader p#playerDisplay {
