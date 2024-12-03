@@ -83,7 +83,7 @@
     function switchPlayer() {
         if (isSwitchingPlayer) return; 
         isSwitchingPlayer = true;
-        playerDisplay.innerHTML = 'SWITCHING';
+        playerDisplay.innerHTML = 'SWITCH';
         const overlay = document.createElement('div');
         overlay.classList.add('blocking-overlay');
         gameplaySection.appendChild(overlay);
@@ -145,7 +145,7 @@
         // Random position within gameplaySection
         const sectionWidth = gameplaySection.offsetWidth;
         const sectionHeight = gameplaySection.offsetHeight;
-        const x = Math.random() * (sectionWidth - 50);
+        const x = Math.random() * (sectionWidth - 100);
         const y = Math.random() * (sectionHeight - 150);
         clickable.style.left = `${x}px`;
         clickable.style.top = `${y}px`;
