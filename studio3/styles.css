@@ -310,9 +310,13 @@ button:active {
     position: relative;
     left: 39vw;
     color: #1E270E;
-    top: 652px;
+    top: 700px;
+    width: 300px;
 }
 
+#gameScreen #scoreDisplay p {
+    margin: 0;
+}
 #scoreAddMinus {
     position: absolute;
     font-size: 34px;
@@ -320,7 +324,7 @@ button:active {
     pointer-events: none;
     z-index: 10;
     top: -30px;
-    color: #00a904;
+    color: #27fd2c;
     left: 300px;
     opacity: 0;
     transition: opacity 0.25s ease;
