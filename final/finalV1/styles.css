@@ -195,6 +195,7 @@ button:active {
     display: flex;
     justify-content: center;
     gap: 70px;
+    padding-bottom: 17px;
 }
 
 #instructions div button {
@@ -497,7 +498,7 @@ span#winnerPlayer {
 /* maybe one day lol */
 @keyframes dropDown {
     0%{
-        top: -10%
+        top: -80%
     }
     100%{
         top: 90px;

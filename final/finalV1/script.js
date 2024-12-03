@@ -34,10 +34,18 @@
     /////////switching screens
     ////swtiching to instruction screen
     instructionBTTN.addEventListener('click', function(){
-        mainPage.className = 'hidden';
-        mainBG.className = 'hidden';
-        logoSection.className = 'showing';
         instructionScreen.className = 'showing';
+        instructionScreen.style.animation = 'dropDown 1s ease-out';
+        setTimeout(() => {
+            mainPage.className = 'hidden';
+            mainBG.className = 'hidden';
+        }, 1000);
+
+        
+        logoSection.className = 'showing';
+        
+        
+        ///imaagine i add an animation for instruction screen .style.animation = `dropDown 0.5s ease-in-out`;
     });
 
     ////switching to the gameplay screen
