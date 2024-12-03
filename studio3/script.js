@@ -109,15 +109,15 @@
         }, 5000); 
     }
 
-    // const countdown = setInterval(() => {
-    //     if (!gameScreen.classList.contains('showing')) return;
-    //     if (timer > 0) {
-    //         timer--;
-    //         updateTimerDisplay();
-    //     } else {
-    //         switchPlayer();
-    //     }
-    // }, 1000);
+    const countdown = setInterval(() => {
+        if (!gameScreen.classList.contains('showing')) return;
+        if (timer > 0) {
+            timer--;
+            updateTimerDisplay();
+        } else {
+            switchPlayer();
+        }
+    }, 1000);
     updateTimerDisplay();
 
     ////point clickables
