@@ -43,16 +43,18 @@
 
         
         logoSection.className = 'showing';
-        
-        
-        ///imaagine i add an animation for instruction screen .style.animation = `dropDown 0.5s ease-in-out`;
     });
 
     ////switching to the gameplay screen
     playGame.forEach((button) => {
         button.addEventListener('click', (event) => {
-            instructionScreen.className = 'hidden';
-            gameScreen.className = 'showing';
+            instructionScreen.style.animation = 'pullUp 1s ease-out';
+            setTimeout(() => {
+                instructionScreen.className = 'hidden';
+                gameScreen.className = 'showing';
+
+            }, 1000);
+
             playBackgroundMusic();
 
             currentPlayerIndex = parseInt(event.target.getAttribute('data-player'), 10);

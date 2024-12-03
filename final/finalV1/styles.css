@@ -253,6 +253,7 @@ button:active {
 
 #gameScreen #gameplaySection {
     background-image: url(images/grassBackground.png);
+    background-size: cover;
     width: 1000px;
     height: 540px;
     position: absolute;
@@ -498,9 +499,19 @@ span#winnerPlayer {
 /* maybe one day lol */
 @keyframes dropDown {
     0%{
-        top: -80%
+        top: -80%;
     }
     100%{
         top: 90px;
+    }
+}
+
+@keyframes pullUp {
+    0%{
+
+        top: 90px;
+    }
+    100%{
+        top: -80%;
     }
 }
