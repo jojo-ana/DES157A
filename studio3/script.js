@@ -1,8 +1,5 @@
 (function(){
     /* THINGS I STILL NEED TO DO:
-    put in images for the points
-    sound effects for the buttons/points clickable
-    animation for <p id="scoreAddMinus"></p>
     details???? like the border on the gamescreen ig
     animation details
     credits
@@ -112,15 +109,15 @@
         }, 5000); 
     }
 
-    const countdown = setInterval(() => {
-        if (!gameScreen.classList.contains('showing')) return;
-        if (timer > 0) {
-            timer--;
-            updateTimerDisplay();
-        } else {
-            switchPlayer();
-        }
-    }, 1000);
+    // const countdown = setInterval(() => {
+    //     if (!gameScreen.classList.contains('showing')) return;
+    //     if (timer > 0) {
+    //         timer--;
+    //         updateTimerDisplay();
+    //     } else {
+    //         switchPlayer();
+    //     }
+    // }, 1000);
     updateTimerDisplay();
 
     ////point clickables
