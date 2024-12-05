@@ -9,8 +9,10 @@ h1, h2, h3 {
     text-align: center;
 
 }
-ul {
+
+ul, ol {
     padding-left: 18%;
+    padding-right: 10%;
 }
 
 p {
